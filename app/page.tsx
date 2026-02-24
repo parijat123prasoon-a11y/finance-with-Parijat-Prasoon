@@ -9,17 +9,17 @@ import React, { useState } from "react";
 // --------------------------------------------------
 
 // Simple reusable UI components (so no import errors)
-function Card({ children }) {
+function Card({ children }: { children: React.ReactNode }) {
   return (
     <div className="bg-white shadow rounded-2xl border">{children}</div>
   );
 }
 
-function CardContent({ children }) {
+function CardContent({ children }: { children: React.ReactNode }) {
   return <div className="p-6">{children}</div>;
 }
 
-function Button({ children, onClick }) {
+function Button({ children, onClick }: { children: React.ReactNode; onClick?: () => void }) {
   return (
     <button
       onClick={onClick}
@@ -142,7 +142,7 @@ function AboutPage() {
 }
 
 // ---------------- FEATURE CARD ----------------
-function FeatureCard({ title, text }) {
+function FeatureCard({ title, text }: { title: string; text: string }) {
   return (
     <Card>
       <CardContent>
